@@ -1,0 +1,9 @@
+---
+- name: Check for updates
+  apt:
+    update_cache=yes
+    cache_valid=3600
+
+- name: Upgrade all the packages
+  apt:
+    upgrade=dist

@@ -1,11 +1,9 @@
 ---
-- name: update all packages
-  yum: name=* state=latest
+- name: Check for updates and apply them
 
-- name: install other dependencies
-  yum: name={{ item }} state=latest
-  with_items:
-    - curl
-    - wget
-    - vim
+# Use one of the os versions below to apply.
+- include: "os_family/RedHat.yml"
+  when: ansible_os_family == "RedHat"
 
+- incude: "os_family/Debian.yml"
+  when: ansible_os_family == "Debian"

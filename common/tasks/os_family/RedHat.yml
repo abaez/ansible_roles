@@ -1,0 +1,10 @@
+---
+- name: update all packages
+  yum: name=* state=latest
+
+- name: install other dependencies
+  yum: name={{ item }} state=latest
+  with_items:
+    - curl
+    - wget
+    - vim
