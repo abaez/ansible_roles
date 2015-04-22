@@ -1,0 +1,6 @@
+---
+- name: get the dependencies
+  include: "dependencies.yml"
+
+- name: install textadept from source
+  include: "source_build.yml"
