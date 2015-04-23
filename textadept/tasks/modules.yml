@@ -1,0 +1,41 @@
+---
+- name: Install external modules.
+
+- name: clone mitchel's modules
+  hg:
+    repo=http://foicica.com/hg/textadept_modules/
+    dest="{{ local }}/textadept-modules"
+
+- name: link to mitchel's modules
+  file:
+    src="{{ local }}/textadept-modules/{{ item }}"
+    dest="{{ ta_src }}/modules/{{ item }}"
+    state=link
+  with_items:
+    - css
+    - html
+    - python
+    - rest
+    - ruby
+    - yaml
+
+- name: clone rust module
+  hg:
+    repo=https://bitbucket.org/a_baez/ta-rust
+    dest="{{ ta_home }}/modules/rust"
+
+- name: clone go module
+  git:
+    repo=https://github.com/rgieseke/textadept-go.git
+    dest="{{ ta_src }}/modules/go"
+
+- name: clone hastebin module
+  hg:
+    repo=https://bitbucket.org/a_baez/ta-hastebin
+    dest="{{ ta_home }}/modules/hastebin"
+
+
+- name: clone markdown module
+  git:
+    repo=https://github.com/rgieseke/ta-markdown.git
+    dest="{{ ta_home }}/modules/markdown"

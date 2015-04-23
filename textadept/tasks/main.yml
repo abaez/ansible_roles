@@ -3,4 +3,7 @@
   include: "dependencies.yml"
 
 - name: install textadept from source
-  include: "source_build.yml"
+  include: "build.yml"
+
+- name: install textadept modules
+  include: "modules.yml"
