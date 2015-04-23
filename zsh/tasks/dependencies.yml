@@ -1,0 +1,10 @@
+---
+- name: install correct dependencies
+
+- name: Check for RedHat based
+  include: "os_family/RedHat.yml"
+  when: ansible_os_family == "RedHat"
+
+- name: Check for Debian based
+  include: "os_family/Debian.yml"
+  when: ansible_os_family == "Debian"
