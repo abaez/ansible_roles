@@ -1,0 +1,11 @@
+---
+- name: Lua dependencies
+  yum: name={{ item }} state=latest
+  with_items:
+    - lua
+    - lua-devel
+    - git
+
+# uses {{ tmp_dir }}
+- name: Install luarocks
+  include: "luarocks.yml"
