@@ -1,0 +1,6 @@
+---
+ta_version: textadept_7.9
+
+ta_src: /usr/local/share/textadept
+
+ta_home: /home/{{ user_name }}/.textadept

@@ -1,0 +1,14 @@
+- name: make ta home
+  hg:
+    repo=https://bitbucket.org/a_baez/ta-userhome
+    dest="{{ ta_home }}"
+
+- name: make module directory
+  file:
+    dest="{{ ta_home }}/modules"
+    state=directory
+
+- name: get ta common module
+  hg:
+    repo=https://bitbucket.org/a_baez/ta-common
+    dest="{{ ta_home }}/modules/common"
