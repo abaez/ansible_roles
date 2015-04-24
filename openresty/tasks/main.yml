@@ -1,0 +1,11 @@
+---
+- name: setup and configuration for openresty
+
+- name: dependencies installation
+  include: "dependencies.yml"
+
+- name: build installation
+  include: "build.yml"
+
+- name: configure openresty
+  include: "configuration.yml"

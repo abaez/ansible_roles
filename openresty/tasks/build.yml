@@ -1,0 +1,25 @@
+---
+- name: download Openresty
+  get_url:
+    url="http://openresty.org/download/ngx_openresty-{{ openresty_version }}.tar.gz"
+    dest="{{ tmp_dir }}/openresty.tar.gz"
+
+- name: extract targball
+  command: tar zxf openresty.tar.gz
+  args:
+    chdir: "{{ tmp_dir }}"
+
+- name: configure
+  command: ./configure
+  args:
+    chdir: "{{ tmp_dir }}/ngx_openresty-{{ openresty_version }}"
+
+- name: build
+  command: make
+  args:
+    chdir: "{{ tmp_dir }}/ngx_openresty-{{ openresty_version }}"
+
+- name: install
+  command: make install
+  args:
+    chdir: "{{ tmp_dir }}/ngx_openresty-{{ openresty_version }}"
