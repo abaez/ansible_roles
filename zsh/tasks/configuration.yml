@@ -1,0 +1,15 @@
+---
+- name: default user setup for zsh
+  hg:
+    repo=https://bitbucket.org/a_baez/userhome-common
+    dest="{{ userhome }}/.common"
+
+
+- name: link the zshrc and zshenv
+  file:
+    src="{{ userhome }}/.common/{{ item }}"
+    dest="{{ userhome }}/.{{ item }}"
+    state=link
+  with_items:
+    - zshrc
+    - zshenv

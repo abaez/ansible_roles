@@ -2,9 +2,11 @@
 - name: install zsh and dependencies
   include: "dependencies.yml"
 
-- name: use zsh configurations and modules
+- name: use some modueeles for zsh
   include: "modules.yml"
 
+- name: use user configuration for zsh
+  include: "configuration.yml"
+
 - name: change shell from bash to zsh for vagrant
-  remote_user: vagrant
   shell: chsh -s $(which zsh)
