@@ -7,5 +7,5 @@
 - name: build installation
   include: "build.yml"
 
-- name: configure openresty
-  include: "configuration.yml"
+#- name: configure openresty
+#  include: "configuration.yml"
