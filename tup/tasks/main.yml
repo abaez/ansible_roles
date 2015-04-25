@@ -1,0 +1,7 @@
+---
+
+- name: dependencies
+  include: "dependencies.yml"
+
+- name: build
+  include: "build.yml"

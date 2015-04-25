@@ -1,0 +1,10 @@
+---
+- name: clone tup
+  git:
+    repo="https://github.com/gittup/tup.git"
+    dest="{{ tmp_dir }}/tup"
+
+- name: build tup
+  shell: sh ./bootstrap.sh
+  args:
+    chdir: "{{ tmp_dir }}/tup"
