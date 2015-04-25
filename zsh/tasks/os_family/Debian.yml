@@ -1,6 +1,6 @@
 ---
 - name: install zsh and dependencies
-  apt: pkg={{ item }} state=latest
+  apt: name={{ item }} state=latest
   with_items:
     - git
     - mercurial

@@ -1,6 +1,6 @@
 ---
 - name: source dependencies
-  apt: pkg={{ item }} state=latest
+  apt: name={{ item }} state=latest
   with_items:
     - gcc
     - g++
@@ -10,7 +10,7 @@
     - patch
 
 - name: dvcs requirements
-  apt: pkg={{ item }} state=latest
+  apt: name={{ item }} state=latest
   with_items:
     - mercurial
     - git
