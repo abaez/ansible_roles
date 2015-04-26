@@ -5,7 +5,7 @@
 - name: install textadept from source
   include: "build.yml"
 
-  - name: add userhome modules
+- name: add userhome modules
   include: "userhome.yml"
 
 - name: install textadept modules
