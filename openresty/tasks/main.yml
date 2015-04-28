@@ -1,5 +1,4 @@
 ---
-- name: setup and configuration for openresty
 
 - name: dependencies installation
   include: "dependencies.yml"
