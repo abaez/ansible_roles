@@ -1,0 +1,9 @@
+---
+- name: installation and configuration of redis
+
+- name: dependencies
+  include: "dependencies.yml"
+
+- name: installation
+  include: "build.yml"
+

@@ -1,0 +1,17 @@
+---
+
+- name: clone repository
+  github:
+    repo=https://github.com/antirez/redis.git
+    dest="{{ tmp_dir }}/redis"
+    release="{{ redis_version }}"
+
+- name: make build
+  command: make
+  args:
+    chdir: "{{ tmp_dir }}/redis"
+
+- name: make install
+  command: make install
+  args:
+    chdir: "{{ tmp_dir }}/redis"

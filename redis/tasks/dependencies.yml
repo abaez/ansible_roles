@@ -1,0 +1,7 @@
+---
+- name: prerequisites for build
+  yum: name={{ item }} state=latest
+  with_items:
+    - git
+    - make
+    - gcc
