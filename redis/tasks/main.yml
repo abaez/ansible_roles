@@ -5,5 +5,7 @@
   include: "dependencies.yml"
 
 - name: installation
-  include: "build.yml"
+  yum: name=redis state=latest
 
+- name: configuration
+  include: "configuration.yml"

@@ -5,3 +5,9 @@
     - git
     - make
     - gcc
+
+
+- name: Install epel
+  rpm:
+    name="dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-{{ epel }}.rpm"
+    state=present
