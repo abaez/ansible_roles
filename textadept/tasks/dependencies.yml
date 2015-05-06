@@ -1,6 +1,4 @@
 ---
-- name: install correct dependencies
-
 - name: Check for RedHat based
   include: "os_family/RedHat.yml"
   when: ansible_os_family == "RedHat"

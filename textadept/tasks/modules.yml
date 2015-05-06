@@ -1,6 +1,4 @@
 ---
-- name: Install external modules.
-
 - name: clone mitchel's modules
   hg:
     repo=http://foicica.com/hg/textadept_modules/
