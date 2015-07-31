@@ -2,11 +2,11 @@
 - name: clone mitchel's modules
   hg:
     repo=http://foicica.com/hg/textadept_modules/
-    dest="{{ local }}/textadept-modules"
+    dest="{{ tool_path }}/textadept-modules"
 
 - name: link to mitchel's modules
   file:
-    src="{{ local }}/textadept-modules/{{ item }}"
+    src="{{ tool_path }}/textadept-modules/{{ item }}"
     dest="{{ ta_src }}/modules/{{ item }}"
     state=link
   with_items:
@@ -21,39 +21,3 @@
   git:
     repo=https://github.com/rgieseke/textadept-go.git
     dest="{{ ta_src }}/modules/go"
-
-- name: make ta home
-  hg:
-    repo=https://bitbucket.org/a_baez/ta-userhome
-    dest="{{ ta_home }}"
-
-- name: make module directory
-  file:
-    dest="{{ ta_home }}/modules"
-    state=directory
-
-- name: get ta common module
-  hg:
-    repo=https://bitbucket.org/a_baez/ta-common
-    dest="{{ ta_home }}/modules/common"
-
-- name: clone rust module
-  hg:
-    repo=https://bitbucket.org/a_baez/ta-rust
-    dest="{{ ta_home }}/modules/rust"
-
-- name: clone hastebin module
-  hg:
-    repo=https://bitbucket.org/a_baez/ta-hastebin
-    dest="{{ ta_home }}/modules/hastebin"
-
-- name: clone toml module
-  hg:
-    repo=https://bitbucket.org/a_baez/ta-toml
-    dest="{{ ta_home }}/modules/toml"
-
-- name: clone markdown module
-  git:
-    repo=https://github.com/rgieseke/ta-markdown.git
-    dest="{{ ta_home }}/modules/markdown"
-

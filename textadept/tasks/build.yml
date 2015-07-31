@@ -6,13 +6,13 @@
     revision={{ ta_version }}
 
 - name: textadept make deps
-  shell: make deps
+  command: make deps NIGHTLY=1
   args:
     chdir: "{{ tmp_dir }}/textadept/src"
-    creates: "{{ tmp_dir }}/textadept/src/scintilla/"
+    #creates: "{{ tmp_dir }}/textadept/src/scintilla/"
 
 - name: textadept make build
-  shell: make curses
+  command: make curses
   args:
     chdir: "{{ tmp_dir }}/textadept/src"
 
@@ -29,7 +29,7 @@
 
 - name: textadept make install
   always_run: yes
-  shell: make all install
+  command: make curses install
   args:
     chdir: "{{ tmp_dir }}/textadept/src"
 
