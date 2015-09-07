@@ -2,9 +2,10 @@
 - name: install the requirements for RedHat based
   yum: name={{ item }} state=latest
   with_items:
-    - pkg-config
+    - pkgconfig
     - fuse
-    - union-fs
+    - fuse-libs
+    - fuse-devel
   when: ansible_os_family == "RedHat"
 
 - name: install the requirements for Debian based

@@ -1,6 +1,6 @@
 ---
 - name: enable docker
-  service: enable=yes name=docker
+  service: enabled=yes name=docker
 
 - name: start docker
   service:

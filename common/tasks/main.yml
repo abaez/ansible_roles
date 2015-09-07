@@ -1,5 +1,4 @@
 ---
-- name: Check for updates and apply them
 
 # Use one of the os versions below to apply.
 - include: "os_family/RedHat.yml"
