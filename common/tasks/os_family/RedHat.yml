@@ -1,4 +1,9 @@
 ---
+- name: install EPEL repository
+  yum:
+    name=https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    state=present
+
 - name: update all packages
   yum: name=* state=latest
 
@@ -8,3 +13,9 @@
     - curl
     - wget
     - vim
+
+- name: install DVCS
+  yum: name={{ item }} state=latest
+  with_items:
+    - git
+    - mercurial
