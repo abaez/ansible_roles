@@ -1,12 +1,15 @@
 ---
 - name: install zsh and dependencies
+  become: yes
   include: "dependencies.yml"
 
-- name: use some modueeles for zsh
+- name: use some modules for zsh
   include: "modules.yml"
 
-- name: use user configuration for zsh
+- name: configure zsh
   include: "configuration.yml"
 
-- name: change shell from bash to zsh for vagrant
-  shell: chsh -s $(which zsh)
+- name: change shell from bash to zsh
+  user:
+    name={{ user.name }}
+    shell=/bin/zsh
