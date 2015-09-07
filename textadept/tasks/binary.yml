@@ -1,0 +1,21 @@
+---
+- name: dl binary package
+  get_url:
+    url=http://foicica.com/textadept/download/textadept_LATEST.x86_64.tgz
+    dest={{ tmp_dir }}
+
+- name: extract binary package
+  unarchive:
+    src="{{ tmp_dir }}/textadept_LATEST.x86_64.tgz"
+    dest={{ ta_src }}
+    copy=no
+
+
+- name: link textadept curses to local/bin
+  file:
+    src="{{ ta_src }}/{{ item }}-curses"
+    dest="/usr/local/bin/{{ item }}"
+    state=link
+  with_items:
+    - textadeptjit
+    - textadept
